@@ -1,4 +1,4 @@
-**Behavioral Cloning Project**
+### Behavioral Cloning Project
 
 The goals / steps of this project are the following:
 * Use the simulator to collect data of good driving behavior
@@ -15,8 +15,8 @@ The goals / steps of this project are the following:
 [image3]: ./examples/normal.jpg "Normal Image"
 [image4]: ./examples/flipped.jpg "Flipped Image"
 
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
+### Rubric Points
+Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
 My project includes the following files:
 * model.py containing the script to create and train the model
@@ -37,25 +37,23 @@ My model consists of three convolution neural network with 5x5 filter sizes and 
 
 The model includes RELU layers to introduce nonlinearity after each convolution layer (model.py lines 47-51), and the data is normalized in the model using a Keras lambda layer (code line 45). 
 
-### 2. Attempts to reduce overfitting in the model
+### Attempts to reduce overfitting in the model
 
 The model contains enough training data to ensure it is not overfitting. Besides training data from going round the loop, two pass through the bridge was also added to the training data. Since bridge has a different texture than the rest of the road it helped the neural network to learn more about the bridge as well.
 
 The model was trained and validated on the data set (model.py line 58-59). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
-### 3. Model parameter tuning
+### Model parameter tuning
 
 The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 58).
 
-### 4. Appropriate training data
+### Appropriate training data
 
 Training data was chosen to keep the vehicle driving on the road. In addition to driving all the way through the track, I also used two passes of driving just on the bridge, to make the network more familiar with bridges. I also used flipped images to remove the left turn bias in the training data.
 
 For details about how I created the training data, see the next section. 
 
-### Model Architecture and Training Strategy
-
-### 1. Solution Design Approach
+### Solution Design Approach
 
 The overall strategy for deriving a model architecture was to different well known architectures, find the one that works best and then tune it to work better for this problem.
 
@@ -69,7 +67,7 @@ To improve the driving behavior on the bridge I added two passes of the car driv
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
-### 2. Final Model Architecture
+### Final Model Architecture
 
 The final model architecture (model.py lines 44-56) consisted of a convolution neural network with the following layers and layer sizes:
 
@@ -87,7 +85,7 @@ The final model architecture (model.py lines 44-56) consisted of a convolution n
 
 The output specifies the steering angle. So this is a regression problem instead of a classification one.
 
-### 3. Creation of the Training Set & Training Process
+### Creation of the Training Set & Training Process
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
